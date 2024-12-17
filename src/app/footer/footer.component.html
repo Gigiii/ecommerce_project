@@ -1,15 +1,19 @@
 <!-- Footer -->
-<footer class="bg-gray-200">
+ <app-newsletter-row></app-newsletter-row>
+<footer>
     <!-- Top Footer -->
     <div class="container mx-auto px-4 py-8">
         <div class="grid grid-cols-4 gap-6">
             <!-- Left Column -->
-            <div>
-                <h3 class="text-lg font-bold text-gray-700 mb-4"><span><app-logo-small></app-logo-small> Ecommerce</span></h3>
+            <div class="footer-left-col">
+                <span class="text-xl font-bold text-gray-700 mb-4 flex items-center gap-4"><app-logo-small></app-logo-small> Ecommerce</span>
                 <ul class="space-y-2">
-                    <li><a href="#" class="text-gray-600 hover:text-gray-800">FAQ</a></li>
-                    <li><a href="#" class="text-gray-600 hover:text-gray-800">Terms of Use</a></li>
-                    <li><a href="#" class="text-gray-600 hover:text-gray-800">Privacy Policy</a></li>
+                  <li class="text-neutral-500 mb-6">DevCut is a YouTube channel for practical project-based learning.</li>
+                  <li class="flex gap-6">
+                    <app-github-logo class="inline-block"></app-github-logo>
+                    <app-instagram-logo class="inline-block"></app-instagram-logo>
+                    <app-youtube-logo class="inline-block"></app-youtube-logo>
+                  </li>
                 </ul>
             </div>
             <!-- Middle Column -->
@@ -17,46 +21,46 @@
                 <div class="grid grid-cols-3 gap-6">
                     <!-- SUPPORT -->
                     <div>
-                        <h3 class="text-lg font-bold text-gray-700 mb-4">SUPPORT</h3>
+                        <h3 class="text-lg text-neutral-500 mb-6 text-center">SUPPORT</h3>
                         <ul class="space-y-2">
-                            <li><a href="#" class="text-gray-600 hover:text-gray-800">FAQ</a></li>
-                            <li><a href="#" class="text-gray-600 hover:text-gray-800">Terms of Use</a></li>
-                            <li><a href="#" class="text-gray-600 hover:text-gray-800">Privacy Policy</a></li>
+                            <li class="text-center"><a href="#" class="text-gray-700 hover:text-black">FAQ</a></li>
+                            <li class="text-center"><a href="#" class="text-gray-700 hover:text-black">Terms of Use</a></li>
+                            <li class="text-center"><a href="#" class="text-gray-700 hover:text-black">Privacy Policy</a></li>
                         </ul>
                     </div>
                     <!-- COMPANY -->
                     <div>
-                        <h3 class="text-lg font-bold text-gray-700 mb-4">COMPANY</h3>
+                        <h3 class="text-lg text-neutral-500 mb-6 text-center">COMPANY</h3>
                         <ul class="space-y-2">
-                            <li><a href="#" class="text-gray-600 hover:text-gray-800">About Us</a></li>
-                            <li><a href="#" class="text-gray-600 hover:text-gray-800">Careers</a></li>
-                            <li><a href="#" class="text-gray-600 hover:text-gray-800">Press</a></li>
+                            <li class="text-center"><a href="#" class="text-gray-700 hover:text-black">Careers</a></li>
+                            <li class="text-center"><a href="#" class="text-gray-700 hover:text-black">Contact</a></li>
+                            <li class="text-center"><a href="#" class="text-gray-700 hover:text-black">About Us</a></li>
                         </ul>
                     </div>
                     <!-- SHOP -->
                     <div>
-                        <h3 class="text-lg font-bold text-gray-700 mb-4">SHOP</h3>
+                        <h3 class="text-lg text-neutral-500 mb-6 text-center">SHOP</h3>
                         <ul class="space-y-2">
-                            <li><a href="#" class="text-gray-600 hover:text-gray-800">Products</a></li>
-                            <li><a href="#" class="text-gray-600 hover:text-gray-800">Pricing</a></li>
-                            <li><a href="#" class="text-gray-600 hover:text-gray-800">Offers</a></li>
+                            <li class="text-center"><a href="#" class="text-gray-700 hover:text-black">Cart</a></li>
+                            <li class="text-center"><a href="#" class="text-gray-700 hover:text-black">Checkout</a></li>
+                            <li class="text-center"><a href="#" class="text-gray-700 hover:text-black">My Account</a></li>
                         </ul>
                     </div>
                 </div>
             </div>
             <!-- Right Column -->
             <div>
-                <h3 class="text-lg font-bold text-gray-700 mb-4">CONTACT</h3>
-                <ul class="space-y-2">
-                    <li><a href="#" class="text-gray-600 hover:text-gray-800">Email Us</a></li>
-                    <li><a href="#" class="text-gray-600 hover:text-gray-800">Support Center</a></li>
-                    <li><a href="#" class="text-gray-600 hover:text-gray-800">Live Chat</a></li>
+                <h3 class="text-lg text-neutral-500 mb-4 text-center">ACCEPTED PAYMENTS</h3>
+                <ul class="space-y-2 flex items-end gap-5 justify-center">
+                    <li><app-mastercard-logo [isBlackAndWhite]=true ></app-mastercard-logo></li>
+                    <li><app-amex-logo [isBlackAndWhite]=true></app-amex-logo></li>
+                    <li><app-visa-logo [isBlackAndWhite]=true></app-visa-logo></li>
                 </ul>
             </div>
         </div>
     </div>
     <!-- Bottom Footer -->
-    <div class="bg-gray-300 py-4">
+    <div class="bg-neutral-100 py-4">
         <div class="container mx-auto text-center">
             <p class="text-sm text-gray-600">&copy; 2024 All Rights Reserved</p>
         </div>
