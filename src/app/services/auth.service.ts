@@ -12,6 +12,7 @@ export class AuthService {
     {username: 'gigi', password: 'test123'},
   ]
   private isLoggedIn = false;
+  private currentUser: User | null = null;
 
   constructor(private router: Router) { }
 
@@ -24,19 +25,33 @@ export class AuthService {
     if (user) {
       this.isLoggedIn = true;
       localStorage.setItem('isLoggedIn', 'True');
+      localStorage.setItem('currentUser', JSON.stringify(user));
       return true;
     }
     else{
       return false;
     }
-    
+
   }
 
   logout() : void {
+    this.isLoggedIn = false;
+    this.currentUser = null;
     localStorage.removeItem('isLoggedIn');
+    localStorage.removeItem('currentUser');
   }
 
-  isAuthenticated() : boolean {
-    return this.isLoggedIn || localStorage.getItem('isLoggedIn') === 'True';
+  isAuthenticated(): boolean {
+    const loggedInStatus = localStorage.getItem('isLoggedIn');
+    if (loggedInStatus === 'True') {
+      const storedUser = localStorage.getItem('currentUser');
+      this.currentUser = storedUser ? JSON.parse(storedUser) : null;
+      this.isLoggedIn = true;
+    }
+    return this.isLoggedIn;
+  }
+
+  getCurrentUser(): User | null {
+    return this.currentUser;
   }
 }

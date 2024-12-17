@@ -1,13 +1,28 @@
 <header class="bg-white shadow">
     <div class="bg-gray-950	flex justify-center py-2"><span class="text-gray-200">Get 25% OFF on your first order. <a href="#" class="text-white">Order Now</a></span></div>
     <div class="container mx-auto px-4 py-4 flex justify-between items-center">
-      <a href="#" class="text-xl font-bold text-blue-500">Brand</a>
+      <a routerLink="/home" class="text-2xl font-bold text-black flex items-center gap-3"><app-logo-header></app-logo-header> Ecommerce</a>
       <nav class="flex space-x-4">
-        <a routerLink="/home" class="text-gray-600 hover:text-blue-500">Home</a>
-        <a *ngIf="!loggedIn" routerLink="/login" class="text-gray-600 hover:text-blue-500">Login</a>
-        <a *ngIf="loggedIn" (click)="logout()" href="#" class="text-gray-600 hover:text-blue-500">Logout</a>
-        <a href="#" class="text-gray-600 hover:text-blue-500">About</a>
-        <a href="#" class="text-gray-600 hover:text-blue-500">Contact</a>
+        <a routerLink="/home" class="text-gray-600 hover:text-blue-500">Searchbar Here</a>
+        <div class="relative inline-block text-left">
+
+          <a class="dropdown-button-user cursor-pointer" (click)="toggleDropdown()">
+            <app-user-logo></app-user-logo>
+          </a>
+
+          <div *ngIf="loggedIn && userDropdownOpen" class="dropdown-menu absolute right-0 mt-2 w-48 bg-white border border-gray-300 rounded-lg shadow-lg">
+            <div class="p-2">
+              <span class="block text-gray-800 font-semibold">{{ userName }}</span>
+            </div>
+            <a (click)="logout()" href="#" class="block px-4 py-2 text-gray-600 hover:text-blue-500">Logout</a>
+          </div>
+
+          <div *ngIf="!loggedIn && userDropdownOpen" class="absolute right-0 mt-2 w-48 bg-white border border-gray-300 rounded-lg shadow-lg">
+            <a routerLink="/login" class="block px-4 py-2 text-gray-600 hover:text-blue-500">Login</a>
+          </div>
+        </div>
+
+        <a href="#"><app-cart-logo></app-cart-logo></a>
       </nav>
     </div>
   </header>
