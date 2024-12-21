@@ -1,0 +1,4 @@
+.dropdown-menu {
+  @apply opacity-0 invisible group-hover:opacity-100 group-hover:visible;
+  transition: opacity 0.2s ease-in-out, visibility 0.2s ease-in-out;
+}

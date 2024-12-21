@@ -1,1 +1,14 @@
-<p>product-row works!</p>
+<div class="flex flex-row justify-center gap-5">
+  <div *ngFor="let product of products" class="basis-1/5">
+    <div>
+      <div class="img-div aspect-photo bg-neutral-100 flex items-center justify-center">
+        <img [src]="product.imageUrls[0]" alt="{{ product.name }}" class="w-9/12">
+      </div>
+      <h3>{{ product.name }}</h3>
+      <p>Price: {{ product.price | currency }}</p>
+      <p>Size: {{ product.size }}</p>
+      <p>In stock: {{ product.inStock ? 'Yes' : 'No' }}</p>
+      <p>Color: {{ product.color }}</p>
+    </div>
+  </div>
+</div>

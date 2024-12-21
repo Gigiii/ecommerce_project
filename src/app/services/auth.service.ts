@@ -8,18 +8,18 @@ import { User } from '../interfaces/user';
 
 export class AuthService {
   private users : User[] = [
-    {username: 'user1', password: 'pass1'},
-    {username: 'gigi', password: 'test123'},
+    {username: 'user1', email: 'user@gmail.com', password: 'pass1'},
+    {username: 'gigi', email: 'user2@gmail.com', password: 'test123'},
   ]
   private isLoggedIn = false;
   private currentUser: User | null = null;
 
   constructor(private router: Router) { }
 
-  login (username: string, password: string) : boolean {
+  login (email: string, password: string) : boolean {
 
     const user = this.users.find(
-      (u) => u.username === username && u.password === password
+      (u) => u.email === email && u.password === password
     );
 
     if (user) {
