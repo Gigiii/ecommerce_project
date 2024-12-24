@@ -1,0 +1,13 @@
+<div class="bg-neutral-100">
+    <div class="container m-auto py-14">
+        <h1 class="font-bold text-3xl">Cart</h1>
+        <span class=""><a routerLink="/home">Ecommerce</a> > <a routerLink="/cart">Cart</a></span>
+    </div>
+</div>
+
+<div class="flex container m-auto mt-12 mb-64 justify-between items-center">
+    <app-items [cart_items]="cart_items" (cart_change)="onCartChange($event)" class="basis-3/5"></app-items>
+
+    <app-payment class="basis-3/12" [subtotal]="subtotal"></app-payment>
+
+</div>

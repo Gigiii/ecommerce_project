@@ -9,7 +9,7 @@ export class ProductService {
     {
       id: 1,
       name: "Basic Sweatshirt",
-      imageUrls: ["images/products/sweatshirt.png", "images/products/black_hoodie.png", "images/products/sweatshirt.png", "images/products/sweatshirt.png", "images/products/sweatshirt.png"],
+      imageUrls: ["images/products/sweatshirt.png", "images/products/black_hoodie.png", "images/products/white_shirt.png"],
       categories: ["Clothing", "Sweatshirts"],
       size: [Size.S, Size.M, Size.L],
       price: 19.99,
@@ -69,7 +69,7 @@ export class ProductService {
     {
       id: 5,
       name: "Sports Watch",
-      imageUrls: ["images/products/sweatshirt.png", "images/products/sweatshirt.png"],
+      imageUrls: ["images/products/sports_watch.png"],
       categories: ["Accessories", "Watches"],
       size: [Size.S, Size.M, Size.L, Size.XXL],
       price: 129.99,
@@ -84,7 +84,7 @@ export class ProductService {
     {
       id: 6,
       name: "Leather Wallet",
-      imageUrls: ["images/products/sweatshirt.png", "images/products/sweatshirt.png"],
+      imageUrls: ["images/products/wallet.png"],
       categories: ["Accessories", "Wallets"],
       size: [Size.S, Size.L, Size.XXL],
       price: 39.99,
@@ -99,12 +99,12 @@ export class ProductService {
     {
       id: 7,
       name: "Linen Shirt",
-      imageUrls: ["images/products/sweatshirt.png", "images/products/sweatshirt.png"],
+      imageUrls: ["images/products/white_shirt.png", "images/products/black_shirt.png"],
       categories: ["Clothing", "Shirts"],
       size: [Size.S, Size.M, Size.L, Size.XXL],
       price: 29.99,
       inStock: true,
-      color: [Color.White, Color.Red, Color.Blue],
+      color: [Color.White, Color.Red, Color.Black],
       description: `Stay cool and comfortable with our Linen Shirt. Perfect for warmer days, this lightweight and breathable shirt is designed for both style and comfort. Its versatile white color pairs effortlessly with any outfit.
 
       - Soft and Breathable Fabric
@@ -114,7 +114,7 @@ export class ProductService {
     {
       id: 8,
       name: "Sporting Cap",
-      imageUrls: ["images/products/sweatshirt.png", "images/products/sweatshirt.png"],
+      imageUrls: ["images/products/cap.png"],
       categories: ["Accessories", "Hats"],
       size: [Size.S, Size.M, Size.L, Size.XXL],
       price: 15.99,
@@ -129,7 +129,7 @@ export class ProductService {
     {
       id: 9,
       name: "Winter Boots",
-      imageUrls: ["images/products/sweatshirt.png", "images/products/sweatshirt.png"],
+      imageUrls: ["images/products/boots.png"],
       categories: ["Footwear"],
       size: [Size.S, Size.M, Size.L, Size.XL],
       price: 119.99,
@@ -143,18 +143,33 @@ export class ProductService {
     },
     {
       id: 10,
-      name: "Sports Bra",
-      imageUrls: ["images/products/sweatshirt.png", "images/products/sweatshirt.png"],
+      name: "Ryan Hoffman Shirt",
+      imageUrls: ["images/products/ryan_shirt.png"],
       categories: ["Clothing"],
       size: [Size.S, Size.M, Size.L, Size.XL],
       price: 24.99,
       inStock: true,
-      color: [Color.Black, Color.Blue],
-      description: `Maximize your workout performance with our Sports Bra. Designed for support and comfort, this activewear essential ensures a secure fit during high-intensity activities. The vibrant pink color adds a stylish touch.
+      color: [Color.Black],
+      description: `Maximize your workout performance with the really cool Ryan Hoffman Shirt!
 
       - Breathable and Sweat-Wicking
       - Supportive and Comfortable Fit
       - Stylish and Functional Design`,
+    },
+    {
+      id: 11,
+      name: "Basic Shirt",
+      imageUrls: ["images/products/white_shirt.png", "images/products/black_shirt.png"],
+      categories: ["Clothing", "Shirts"],
+      size: [Size.S, Size.M, Size.L, Size.XXL],
+      price: 29.99,
+      inStock: true,
+      color: [Color.White, Color.Red, Color.Black],
+      description: `Stay cool and comfortable with our Linen Shirt. Perfect for warmer days, this lightweight and breathable shirt is designed for both style and comfort. Its versatile white color pairs effortlessly with any outfit.
+
+      - Soft and Breathable Fabric
+      - Classic and Timeless Look
+      - Suitable for Casual or Formal Occasions`,
     },
   ];
 

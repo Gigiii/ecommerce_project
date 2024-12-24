@@ -20,25 +20,26 @@ import { HeaderStateService } from '../services/header-state.service';
   styleUrl: './header.component.scss'
 })
 export class HeaderComponent implements OnInit {
-  loggedIn : boolean;
+  loggedIn! : boolean;
   username: string | null = null;
   constructor(private authService : AuthService, private router: Router, private headerStateService : HeaderStateService) {
 
-    this.loggedIn = this.authService.isAuthenticated();
-
+    
   }
-
+  
   ngOnInit(): void {
+    this.loggedIn = this.authService.isAuthenticated();
     if (this.loggedIn) {
       const currentUser = this.authService.getCurrentUser();
       if (currentUser) {
         this.username = currentUser.username;
       }
     }
-
-    this.headerStateService.loggedIn$.subscribe((status) => {
-      this.loggedIn = status;
-    });
+    else {
+      this.headerStateService.loggedIn$.subscribe((status) => {
+        this.loggedIn = status;
+      });
+    }
 
   }
 

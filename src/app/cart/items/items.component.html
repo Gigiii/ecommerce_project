@@ -1,0 +1,37 @@
+<div class="">
+    <p class="font-bold text-xl">Your cart</p>
+    <div class="divider border-b-2 mt-4"></div>
+    <div class="flex flex-col gap-10 mt-12">
+        <p *ngIf="cart_items.length == 0">No items in your cart.</p>
+        <div *ngFor="let item of cart_items" class="flex items-center justify-between gap-6">
+            <div class="flex gap-6 items-center hover:cursor-pointer" [routerLink]="['/products', item.id]">
+
+                <img [src]="item.imageUrl" alt="Product Image" class="w-1/4 p-2 bg-neutral-100 rounded-md">
+    
+                <div class="description">
+                    <p>{{ item.name }}</p>
+                    <span class="flex items-center text-gray-500">
+                        Color:
+                        <div 
+                          class="w-4 h-4 rounded-full border border-gray-300 mx-2 inline-block"
+                          [ngStyle]="{'background-color': item.color}"
+                          title="Color: {{ item.color }}"
+                        ></div>
+                        — Size: {{ item.size }}
+                      </span>
+                </div>
+            </div>
+
+            <p>{{ item.price | currency }}</p>
+
+            <app-quantity-selector [quantity]="item.quantity" (quantityChange)="onQuantityChange($event, item)"></app-quantity-selector>
+
+            <button class="bg-neutral-100 rounded-lg p-4" (click)="deleteItem(item)">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M15 5L5 15" stroke="#5C5F6A" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M5 5L15 15" stroke="#5C5F6A" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </button>
+        </div>
+    </div>    
+</div>

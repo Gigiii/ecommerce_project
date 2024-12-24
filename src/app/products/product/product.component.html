@@ -1,4 +1,11 @@
 
+<div class="bg-neutral-100">
+  <div class="container m-auto py-14">
+      <h1 class="font-bold text-3xl">Product</h1>
+      <span class=""><a routerLink="/home">Ecommerce</a> > <a routerLink="/catalog">Catalog</a> > <a  [routerLink]="['/products', product.id]">{{ product.name }}</a></span>
+  </div>
+</div>
+
 <div class="container m-auto flex gap-12 mt-16">
   <div class="basis-1/2">
     <div class="relative w-full h-full bg-gray-100 overflow-hidden">
@@ -67,7 +74,7 @@
       </div>
 
       <div class="submit">
-        <button type="submit" class="text-lg w-1/2 bg-black text-white rounded-lg py-3">Add to cart</button>
+        <button (click)="addToCart()" type="button" class="text-lg w-1/2 bg-black text-white rounded-lg py-3">Add to cart</button>
         <p class="text-gray-500 mt-3">— FREE SHIPPING ON ORDERS $100+</p>
       </div>
 
