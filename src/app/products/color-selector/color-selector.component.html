@@ -1,0 +1,19 @@
+<div class="flex space-x-4">
+  <label *ngFor="let color of input_colors" class="relative">
+    <input
+      type="radio"
+      [(ngModel)]="selectedColor"
+      (change)="onColorChange(color)"
+      [value]="color"
+      class="hidden peer" />
+
+    <span
+      [ngClass]="{
+      'ring-2' : isSelected(color),
+      'ring-gray-500' : isSelected(color),
+      }"
+      class="w-8 h-8 rounded-full flex items-center cursor-pointer justify-center border-2 border-opacity-50 hover:bg-gray-100 transition-colors duration-300"
+      [style.background-color]="color"
+    ></span>
+  </label>
+</div>

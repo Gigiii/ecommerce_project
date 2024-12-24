@@ -1,0 +1,16 @@
+<div class="flex items-center space-x-2 border-2 border-gray-200 w-fit rounded-md p-1">
+  <button
+    type="button"
+    (click)="decreaseQuantity()"
+    class="w-10 h-10 text-xl text-black hover:bg-gray-200 focus:outline-none transition-colors duration-300">
+    -
+  </button>
+  <p class="select-none px-2">{{ quantity }}</p>
+
+  <button
+    type="button"
+    (click)="increaseQuantity()"
+    class="w-10 h-10 text-xl  text-black hover:bg-gray-200 focus:outline-none transition-colors duration-300">
+    +
+  </button>
+</div>

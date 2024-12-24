@@ -1,9 +1,20 @@
+export enum Color {
+  Red = "#FF0000",
+  Green = "#00FF00",
+  Blue = "#0000FF",
+  Black = "#000000",
+  White = "#FFFFFF",
+  Yellow = "#FFFF00",
+  Cyan = "#00FFFF",
+  Magenta = "#FF00FF",
+}
+
 export enum Size {
-  S = "Small",
-  M = "Medium",
-  L = "Large",
-  XL = "Extra Large",
-  XXL = "2 Extra Large",
+  S = "S",
+  M = "M",
+  L = "L",
+  XL = "XL",
+  XXL = "XXL",
 }
 
 export interface Product {
@@ -11,8 +22,9 @@ export interface Product {
   name: string;
   imageUrls: string[];
   categories: string[];
-  size: Size;
+  size: Size[];
   price: number;
   inStock: boolean;
-  color: string;
+  color: Color[];
+  description: string;
 }

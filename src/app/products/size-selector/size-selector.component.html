@@ -1,0 +1,23 @@
+<div class="flex space-x-4">
+  <label *ngFor="let size of sizes" class="relative">
+    <input
+      type="radio"
+      [(ngModel)]="selectedSize"
+      (change)="onSizeChange(size)"
+      [value]="size"
+      [disabled]="!isSizeAvailable(size)"
+      class="hidden peer" />
+
+    <span
+      [ngClass]="{
+        'bg-gray-200': !isSizeAvailable(size),
+        'cursor-not-allowed': !isSizeAvailable(size),
+        'cursor-pointer': isSizeAvailable(size),
+        'border-gray-600' : isChecked(size),
+      }"
+      class="w-12 h-12 flex items-center text-lg select-none justify-center rounded-lg border-2 border-opacity-50 hover:bg-gray-100  border-gray-300 peer-checked:border-gray-600  transition-colors duration-300">
+      {{ size }}
+    </span>
+  </label>
+
+</div>
