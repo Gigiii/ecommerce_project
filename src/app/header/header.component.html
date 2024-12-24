@@ -3,7 +3,8 @@
     <div class="container mx-auto px-4 py-4 flex justify-between items-center">
       <a routerLink="/home" class="text-2xl font-bold text-black flex items-center gap-3"><app-logo-header></app-logo-header> Ecommerce</a>
       <nav class="flex space-x-4">
-        <a routerLink="/home" class="text-gray-600 hover:text-blue-500">Searchbar Here</a>
+        <a routerLink="/home" class="text-gray-600 hover:text-black">Home</a>
+        <a routerLink="/catalog" class="text-gray-600 hover:text-black">Catalog</a>
         <div class="relative inline-block text-left group">
           <a class="dropdown-button-user cursor-pointer">
             <app-user-logo></app-user-logo>
@@ -13,15 +14,15 @@
             *ngIf="loggedIn"
             class="dropdown-menu absolute right-0 mt-2 w-48 bg-white border border-gray-300 rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
             <div class="p-2">
-              <span class="block text-gray-800 font-semibold">{{ userName }}</span>
+              <span class="block text-gray-800 font-semibold">{{ username }}</span>
             </div>
-            <a (click)="logout()" href="#" class="block px-4 py-2 text-gray-600 hover:text-blue-500">Logout</a>
+            <a (click)="logout()" href="#" class="block px-4 py-2 text-gray-600 hover:text-black">Logout</a>
           </div>
 
           <div
             *ngIf="!loggedIn"
             class="absolute right-0 mt-2 w-48 bg-white border border-gray-300 rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
-            <a routerLink="/login" class="block px-4 py-2 text-gray-600 hover:text-blue-500">Login</a>
+            <a routerLink="/login" class="block px-4 py-2 text-gray-600 hover:text-black">Login</a>
           </div>
         </div>
 

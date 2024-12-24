@@ -20,11 +20,19 @@ export class LoginComponent {
   constructor(private authService: AuthService, private router: Router, private headerStateService : HeaderStateService) {}
 
   login() : void {
-    if (this.authService.login(this.email, this.password)){
+    if(!this.isEmailValid()) {
+      alert("Please enter a valid email");
+    }
+    else if (this.authService.login(this.email, this.password)){
       this.headerStateService.updateLoginStatus(true);
       this.router.navigate(['/home']);
     } else {
       this.errorMessage = 'Invalid email or password';
     }
+  }
+
+  isEmailValid(): boolean {
+    const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    return emailPattern.test(this.email);
   }
 }

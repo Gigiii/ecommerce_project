@@ -1,0 +1,33 @@
+<div class="flex flex-wrap justify-center gap-8">
+  <div *ngFor="let product of paginatedProducts" class="w-30perc hover:cursor-pointer hover:scale-105 transition-all" (click)="viewProduct(product.id)">
+    <div>
+      <div class="img-div bg-gray-50 flex items-center justify-center rounded-xl mb-6 w-fit m-auto p-4">
+        <img [src]="product.imageUrls[0]" alt="{{ product.name }}" class="h-[312px] w-[237px] object-contain">
+      </div>
+
+      <h1 class="text-center font-semibold text-2xl">{{ product.name }}</h1>
+      <div class="flex justify-center gap-3 mt-2">
+        <p *ngIf="product.inStock" class="text-center px-4 py-0.5 gap-2 border border-gray-300 rounded-full w-fit">
+          IN STOCK
+        </p>
+        <p *ngIf="!product.inStock" class="text-center px-4 py-0.5 gap-2 border border-red-300 rounded-full w-fit text-red-400">
+          NOT IN STOCK
+        </p>
+        <p class="text-lg">{{ product.price | currency }}</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="pagination flex space-x-1 m-auto pl-14 mt-12">
+  <button
+    *ngFor="let page of [].constructor(totalPages); let i = index"
+    (click)="changePage(i + 1)"
+    [class.active]="currentPage === i + 1"
+    [ngClass]="{'bg-black text-white hover:bg-gray-800': currentPage === i + 1}"
+    class="px-4 py-2 text-sm font-semibold rounded-lg border border-gray-300 transition-colors hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-gray-700"
+  >
+    {{ i + 1 }}
+  </button>
+</div>
+

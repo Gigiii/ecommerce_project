@@ -1,0 +1,68 @@
+<div>
+    <div class="mb-4">
+      <label for="categoryFilter" class="block text-gray-700 font-semibold mb-3">Categories</label>
+      <div *ngFor="let category of availableCategories" class="mb-2 border-b-2 border-gray-200 ml-2 mr-12 pb-2">
+        <input
+          type="checkbox"
+          id="category-{{ category }}"
+          [checked]="selectedCategories.includes(category)"
+          (change)="onCategoryChange(category, $event)"
+          class="mr-2"
+        />
+        <label for="category-{{ category }}" class="text-gray-700">{{ category }}</label>
+      </div>
+    </div>
+  
+    <div class="mb-4">
+      <p class="text-md text-gray-500 mb-2">SELECT COLOR</p>
+      <app-color-selector
+        [input_colors]="availableColors"
+        [(selectedColor)]="color"
+        (selectedColorChange)="onFilterChange()"
+      ></app-color-selector>
+    </div>
+  
+    <div class="mb-4">
+      <p class="text-md text-gray-500 mb-2">SELECT SIZE</p>
+      <app-size-selector
+        [input_sizes]="availableSizes"
+        [(selectedSize)]="size"
+        (selectedSizeChange)="onFilterChange()"
+      ></app-size-selector>
+    </div>
+  
+    <div class="mb-4">
+      <label for="priceFilter" class="block text-gray-700 font-semibold">Max Price</label>
+      <input
+        id="priceFilter"
+        type="number"
+        [(ngModel)]="maxPrice"
+        (input)="onPriceChange()"
+        class="w-full p-2 border rounded-lg"
+        placeholder="Enter max price"
+        min="0"
+      />
+    </div>
+  
+    <div class="mb-4">
+      <label for="nameFilter" class="block text-gray-700 font-semibold">Product Name</label>
+      <input
+        id="nameFilter"
+        type="text"
+        [(ngModel)]="name"
+        (input)="onFilterChange()"
+        class="w-full p-2 border rounded-lg"
+        placeholder="Search by name"
+      />
+    </div>
+  
+    <div class="text-center mt-4">
+      <button
+        (click)="clearFilters()"
+        class="w-full p-3 bg-black text-white rounded-md hover:bg-gray-400 focus:outline-none"
+      >
+        Clear Filters
+      </button>
+    </div>
+  </div>
+  

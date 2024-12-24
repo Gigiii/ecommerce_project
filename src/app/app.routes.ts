@@ -4,7 +4,7 @@ import { LogoSmallComponent } from './SVGs/logo-small/logo-small.component';
 import { authGuard } from './guards/auth.guard';
 import { HomeComponent } from './home/home.component';
 import { ProductComponent } from './products/product/product.component';
-import { CatalogBodyComponent } from './catalog/catalog-body/catalog-body.component';
+import { CatalogComponent } from './catalog/catalog/catalog.component';
 
 export const routes: Routes = [
     {path: '', redirectTo: 'home', pathMatch: 'full'},
@@ -13,5 +13,5 @@ export const routes: Routes = [
     {path: 'logout', component: LoginComponent},
     {path: 'products/:id', component: ProductComponent},
     {path: 'cart', component: LogoSmallComponent, canActivate: [authGuard]},
-    {path: 'catalog', component: CatalogBodyComponent},
+    {path: 'catalog', component: CatalogComponent},
 ];

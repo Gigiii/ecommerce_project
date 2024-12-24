@@ -1,0 +1,19 @@
+.filter-section {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 20px;
+  }
+  
+  .filter-section label {
+    display: block;
+    font-weight: bold;
+  }
+  
+  .filter-section input,
+  .filter-section select {
+    padding: 5px;
+    margin-top: 5px;
+    font-size: 14px;
+  }
+  

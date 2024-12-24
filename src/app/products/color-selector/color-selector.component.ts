@@ -12,13 +12,12 @@ import { Color } from '../../interfaces/product';
 })
 export class ColorSelectorComponent {
   @Input() input_colors: Color[] = [];
-  @Input() selectedColor: Color = this.input_colors[0];
+  @Input() selectedColor: Color | undefined;
   @Output() selectedColorChange = new EventEmitter<Color>();
 
   onColorChange(color: Color) {
     this.selectedColor = color;
     this.selectedColorChange.emit(this.selectedColor);
-    console.log(this.selectedColor);
   }
 
   isSelected(color: Color) {

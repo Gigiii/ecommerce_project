@@ -21,7 +21,7 @@ import { HeaderStateService } from '../services/header-state.service';
 })
 export class HeaderComponent implements OnInit {
   loggedIn : boolean;
-  userName: string | null = null;
+  username: string | null = null;
   constructor(private authService : AuthService, private router: Router, private headerStateService : HeaderStateService) {
 
     this.loggedIn = this.authService.isAuthenticated();
@@ -32,7 +32,7 @@ export class HeaderComponent implements OnInit {
     if (this.loggedIn) {
       const currentUser = this.authService.getCurrentUser();
       if (currentUser) {
-        this.userName = currentUser.username;
+        this.username = currentUser.username;
       }
     }
 
@@ -46,6 +46,6 @@ export class HeaderComponent implements OnInit {
     this.authService.logout();
     this.router.navigate(['/home']);
     this.loggedIn = false;
-    this.userName = null;
+    this.username = null;
   }
 }

@@ -11,22 +11,22 @@ import { Size } from '../../interfaces/product';
   styleUrl: './size-selector.component.scss'
 })
 export class SizeSelectorComponent{
-  sizes: string[] = [Size.S, Size.M, Size.L, Size.XL, Size.XXL];
+  sizes: Size[] = [Size.S, Size.M, Size.L, Size.XL, Size.XXL];
   @Input() input_sizes: string[] = [];
-  @Input() selectedSize: string = '';
-  @Output() selectedSizeChange = new EventEmitter<string>();
+  @Input() selectedSize: Size | undefined;
+  @Output() selectedSizeChange = new EventEmitter<Size>();
 
 
-  onSizeChange(size: string) : void {
+  onSizeChange(size: Size) : void {
     this.selectedSize = size;
     this.selectedSizeChange.emit(this.selectedSize);
   }
 
-  isSizeAvailable(size: string): boolean {
+  isSizeAvailable(size: Size): boolean {
     return this.input_sizes.includes(size);
   }
 
-  isChecked(size: string) : boolean {
+  isChecked(size: Size) : boolean {
     return size == this.selectedSize;
   }
 }

@@ -130,7 +130,7 @@ export class ProductService {
       id: 9,
       name: "Winter Boots",
       imageUrls: ["images/products/sweatshirt.png", "images/products/sweatshirt.png"],
-      categories: ["Footwear", "Winter"],
+      categories: ["Footwear"],
       size: [Size.S, Size.M, Size.L, Size.XL],
       price: 119.99,
       inStock: true,
@@ -145,7 +145,7 @@ export class ProductService {
       id: 10,
       name: "Sports Bra",
       imageUrls: ["images/products/sweatshirt.png", "images/products/sweatshirt.png"],
-      categories: ["Clothing", "Activewear"],
+      categories: ["Clothing"],
       size: [Size.S, Size.M, Size.L, Size.XL],
       price: 24.99,
       inStock: true,
@@ -158,8 +158,41 @@ export class ProductService {
     },
   ];
 
+  filterProducts(filters: {
+    category?: string;
+    color?: Color;
+    size?: Size;
+    maxPrice?: number;
+    name?: string;
+  }): Product[] {
+    return this.products.filter((product) => {
+      // Filter by category
+      if (filters.category && !product.categories.some(category => filters.category?.includes(category))) {
+          return false;
+      }
+      // Filter by color
+      if (filters.color && !product.color.includes(filters.color)) {
+        return false;
+      }
+      // Filter by size
+      if (filters.size && !product.size.includes(filters.size)) {
+        return false;
+      }
+      // Filter by max price
+      if (filters.maxPrice !== undefined && product.price > filters.maxPrice) {
+        return false;
+      }
+      // Filter by name
+      if (
+        filters.name &&
+        !product.name.toLowerCase().includes(filters.name.toLowerCase())
+      ) {
+        return false;
+      }
+      return true;
+    });
+  }
 
-  constructor() {}
 
   getProducts(): Product[] {
     return this.products;
